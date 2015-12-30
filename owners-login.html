@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Make a Reservation</title>
+<link rel="stylesheet" type="text/css" href="reservations.css">
+</head>
+<body>
+<div class="container">
+  <div class="header"><a href="#"><img src="restaurant.jpg" alt="Insert Logo Here" name="Insert_logo" width="180" height="90" id="Insert_logo" style="background: #C6D580; display:block;" /></a> 
+    RESTAURANT RESERVATIONS
+    <!-- end .header --></div>
+  <div class="content">
+  	<table width="100%" border="0" cellspacing="10px" cellpadding="10px">
+      <tr>
+        <td>UserName</td>
+        <td><input id="userid" name="userid" type="text" size="30" maxlength="20" /></td>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td><input id="pwd" name="pwd" type="password" size="30" maxlength="20" /></td>
+      </tr>
+    </table>
+    <div class="divLeftPadding">
+    	<input name="submit" type="button" value="Login" class="myButton" onClick="ownersLogin();"/>
+        <input name="reset" type="button" value="Reset" class="myButton" onClick="resetText();"/>
+    </div>
+    <br />
+  <!-- end .content --></div>
+    <div class="footer">
+    <p>Footer</p>
+  <!-- end .footer --></div>
+
+  <!-- end .container --></div>
+</body>
+<script type="text/javascript">
+function ownersLogin(){
+		var dir = getFilePath();
+	window.location.href = dir + "/owners-index.html";
+}
+
+function getFilePath(){
+	var loc = window.location.pathname;
+	var dir = loc.substring(0, loc.lastIndexOf('/'));
+	
+	return dir;
+}
+
+function resetText(){
+		document.getElementById("userid").value = "";
+		document.getElementById("pwd").value = "";
+}
+
+</script>
+</html>

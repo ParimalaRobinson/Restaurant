@@ -1,0 +1,94 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Hotel Reservations - Owners</title>
+<link rel="stylesheet" type="text/css" href="reservations.css">
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+</head>
+<body>
+<div class="container">
+  <div class="header"><a href="#"><img src="restaurant.jpg" alt="Insert Logo Here" name="Insert_logo" width="180" height="90" id="Insert_logo" style="background: #C6D580; display:block;" /></a> 
+  	RESTAURANT RESERVATIONS
+    <!-- end .header --></div>
+    <br />
+  <div class="content">
+	<div class="colleft">
+      <div class="col1">
+            <br />
+      		<input name="login" type="button" class="myButton" value="Restaurant Profile" onclick="profileRedirect();"/>
+            <br />
+            <input name="makereserv" type="button" class="myButton" value="Make Reservation" onclick="makeReservation();"/>
+            <br />
+            <input name="editeserv" type="button" class="myButton" value="Edit Reservation" onclick="editReservation();"/>
+            <br />
+            <input name="cancelreserv" type="button" class="myButton" value="Cancel Reservation" onclick="cancelReservation();"/>
+            <br />
+       </div>
+      <div class="col2">
+          <br />
+            <input name="viewreserv" type="button" class="myButton" value="View Reservation" onclick="viewReservation();"/>
+            <br />
+            <input name="viewseat" type="button" class="myButton" value="View Seat Area" onclick="viewSeat();"/>
+            <br />
+            <!--
+            <input name="assigntable" type="button" class="myButton" value="Assign Table" onclick="cancelReservation();"/>
+            <br />
+            -->
+            <input name="chgtable" type="button" class="myButton" value="Change Table" onclick="cancelReservation();"/>
+            <br />
+            <input name="viewContacts" type="button" class="myButton" value="View Contact List" onclick="viewContacts();"/>
+            <br />
+       </div> 
+    </div> 
+  <!-- end .content --></div>
+  <div class="footer">
+    <p>Footer</p>
+  <!-- end .footer --></div>
+  <!-- end .container --></div>
+</body>
+<script type="text/javascript">
+
+function makeReservation(){
+	var dir = getFilePath();
+	window.location.href = dir + "/make-reservations.html";
+}
+
+function editReservation(){
+	var dir = getFilePath();
+	window.location.href = dir + "/edit-reservations.html";
+}
+
+function cancelReservation(){
+	var dir = getFilePath();
+	window.location.href = dir + "/cancel-reservations.html";
+}
+
+function profileRedirect(){
+	var dir = getFilePath();
+	window.location.href = dir + "/restaurant-profile.html";
+}
+
+function viewReservation(){
+	var dir = getFilePath();
+	window.location.href = dir + "/view-reservations.html";
+}
+
+function viewSeat(){
+	var dir = getFilePath();
+	window.location.href = dir + "/view-seat-area.html";
+}
+
+function viewContacts(){
+	var dir = getFilePath();
+	window.location.href = dir + "/view-contacts.html";
+}
+
+function getFilePath(){
+	var loc = window.location.pathname;
+	var dir = loc.substring(0, loc.lastIndexOf('/'));
+	
+	return dir;
+}
+</script>
+</html>
